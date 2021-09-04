@@ -1,6 +1,6 @@
-import Mongoose from "mongoose";
+import mongoose from "mongoose";
 
-const FoodSchema = new Mongoose.Schema(
+const FoodSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     descript: { type: String, required: true },
@@ -8,18 +8,18 @@ const FoodSchema = new Mongoose.Schema(
     isContainsEgg: { type: Boolean, required: true },
     category: { type: String, required: true },
     photos: {
-      type: Mongoose.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
       ref: "Images",
     },
     price: { type: Number, default: 150, required: true },
     addOns: [
       {
-        type: Mongoose.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: "Foods",
       },
     ],
     restaurant: {
-      type: Mongoose.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
       ref: "Restaurants",
       required: true,
     },
@@ -29,4 +29,4 @@ const FoodSchema = new Mongoose.Schema(
   }
 );
 
-export const FoodModel = Mongoose.model("Foods", FoodSchema);
+export const FoodModel = mongoose.model("Foods", FoodSchema);
