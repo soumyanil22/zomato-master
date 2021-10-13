@@ -19,10 +19,6 @@ const OrderSchema = new mongoose.Schema(
         },
       },
     ],
-    oderRatings: {
-      type: Number,
-      required: true,
-    },
   },
   {
     timestamps: true,
